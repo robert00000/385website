@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "385website",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nThe website I liked is this one https://data.nasa.gov/dataset/narsto-epa-supersite-ss-houston-texas-air-quality-study-2000-texaqs2000-texas-natural-reso-93e18\nproject: type: website\nwebsite: title: “mywebsite” navbar: left: - href: index.qmd text: Home - about.qmd\nformat: html: theme: cosmo css: styles.css toc: true"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "ae03-gerrymander.html",
     "href": "ae03-gerrymander.html",
     "title": "AE03 - Exploring gerrymandring",
@@ -54,5 +40,19 @@
     "title": "AE03 - Exploring gerrymandring",
     "section": "4. Gerrymandering and presidential margin",
     "text": "4. Gerrymandering and presidential margin\nUsing mutate, create a new variable, margin16, measuring how many percentage points Clinton won or lost by in each district (clinton16 - trump16). Does gerrymandering prevalence relate to how lopsided the 2016 presidential race was in that district? Report the min, mean, and max margin by gerry level, then visualize the full distribution with a violin + boxplot combo. Describe the shape, center, and spread of each group.\nThe summary table that I have created tells us the min mean median and max in the margins So with what I have implemented so far it isn’t exactly clear to me but my interpretation with the graphs and table that I have made is that the margins favored trump the most in the higest gerrymandered states. The states with lower gerrymandering favored trump more so with the states with medium gerrymandering in the margins on low gerrymandered states. The median highly gerrymandered states favor trump the most.\nOf course when it comes to the graph we have states grouped in low, medium and high gerrymandering. The margins in the high gerrymandered states are much larger than in the low and medium gerrymandered areas.\n\ngerrymander %&gt;%\n  mutate(margin16 = clinton16 - trump16) %&gt;%\n  group_by(gerry) %&gt;%\n  summarise(min_margin = min(margin16),\n            mean_margin = mean(margin16),\n            median_margin = median(margin16),\n            max_margin = max(margin16)\n            )\n\n# A tibble: 3 × 5\n  gerry min_margin mean_margin median_margin max_margin\n  &lt;fct&gt;      &lt;dbl&gt;       &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;\n1 low        -54.9        6.32         -2.05       88.9\n2 mid        -63          3.25         -1.3        82.8\n3 high       -63          1.34         -6.5        78.2\n\ngerrymander |&gt;\n  mutate(margin16 = clinton16 - trump16) |&gt;\n  ggplot(\n       aes(x = gerry, y = margin16,\n           fill = state,\n           colour = \"smooth\")) +\n  geom_violin() +\n  geom_boxplot(outliers = TRUE)\n\nWarning: Groups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\nGroups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\nGroups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\nGroups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\nGroups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\nGroups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\nGroups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes.\n\n\n\n\n\n\n\n\n  # aes(x = trump16, y = gerry) |&gt;\n  # summarise(trump16, gerry)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "385website",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nThe website I liked is this one https://data.nasa.gov/dataset/narsto-epa-supersite-ss-houston-texas-air-quality-study-2000-texaqs2000-texas-natural-reso-93e18\nproject: type: website\nwebsite: title: “mywebsite” navbar: left: - href: index.qmd text: Home - about.qmd\nformat: html: theme: cosmo css: styles.css toc: true"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]

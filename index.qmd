@@ -1,0 +1,15 @@
+---
+title: "385website"
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+The website I liked is this one <https://data.nasa.gov/dataset/narsto-epa-supersite-ss-houston-texas-air-quality-study-2000-texaqs2000-texas-natural-reso-93e18>
+
+project: type: website
+
+website: title: "mywebsite" navbar: left: - href: index.qmd text: Home - about.qmd
+
+format: html: theme: cosmo css: styles.css toc: true

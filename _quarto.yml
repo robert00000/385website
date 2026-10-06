@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "385 Website"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+    right:
+    - icon: github
+      href: https://github.com/robert00000
+contents:
+  - section: "Assignment #3"
+    contents:
+      - href: ae03-gerrymander.qmd
+        text: "AE 01 - Gerrmandering"
+
+format:
+  html:
+    theme:
+      - sandstone
+      - slate
+    css: styles.css
+    toc: true
+
+editor: visual
+

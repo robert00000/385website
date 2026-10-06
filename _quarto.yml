@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: doc
 
 website:
   title: "385 Website"
@@ -13,11 +14,8 @@ website:
     right:
     - icon: github
       href: https://github.com/robert00000
-contents:
-  - section: "Assignment #3"
-    contents:
-      - href: ae03-gerrymander.qmd
-        text: "AE 01 - Gerrmandering"
+    - href: ae03-gerrymander.qmd
+      text: "AE 01 - Gerrmandering"
 
 format:
   html:

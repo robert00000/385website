@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "385website",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nThe website I liked is this one https://data.nasa.gov/dataset/narsto-epa-supersite-ss-houston-texas-air-quality-study-2000-texaqs2000-texas-natural-reso-93e18\nproject: type: website\nwebsite: title: “mywebsite” navbar: left: - href: index.qmd text: Home - about.qmd\nformat: html: theme: cosmo css: styles.css toc: true"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
